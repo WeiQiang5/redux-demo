@@ -8,7 +8,7 @@ const Vote = () => {
 
   // 获取容器中的公共状态
   console.log(store.getState());
-  let { supNum, oppNum } = store.getState();
+  let { supNum, oppNum } = store.getState().vote;
   // 组件第一次渲染完毕后，把让组件更新的方法,放在store的事件池中
   // let [num, setNum] = useState(0);
   // const update = () => {

@@ -5,7 +5,7 @@ class VoteMain extends React.Component {
   static contextType = ThemeContext;
   render() {
     const { store } = this.context;
-    let { supNum, oppNum } = store.getState();
+    let { supNum, oppNum } = store.getState().vote;
     return (
       <div className="main">
         <p>支持人数:{supNum}人</p>
