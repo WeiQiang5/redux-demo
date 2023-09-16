@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 // 使用antd
 import { ConfigProvider } from "antd";
 import zhCn from "antd/locale/zh_CN";
-import ThemeContext from "./ThemeContext";
 import Vote from "./views/Vote";
+import { Provider } from "react-redux";
 
 // 引入store
 import store from "./store";
@@ -17,8 +17,8 @@ import store from "./store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ConfigProvider locale={zhCn}>
-    <ThemeContext.Provider value={{ store }}>
+    <Provider store={store}>
       <Vote />
-    </ThemeContext.Provider>
+    </Provider>
   </ConfigProvider>
 );

@@ -1,11 +1,9 @@
 import React from "react";
-import ThemeContext from "../ThemeContext";
+import { connect } from "react-redux";
 
 class VoteMain extends React.Component {
-  static contextType = ThemeContext;
   render() {
-    const { store } = this.context;
-    let { supNum, oppNum } = store.getState().vote;
+    let { supNum, oppNum } = this.props;
     return (
       <div className="main">
         <p>支持人数:{supNum}人</p>
@@ -13,13 +11,6 @@ class VoteMain extends React.Component {
       </div>
     );
   }
-  componentDidMount() {
-    const { store } = this.context;
-    store.subscribe(() => {
-      // class中可以直接forceUpdate
-      this.forceUpdate();
-    });
-  }
 }
 
-export default VoteMain;
+export default connect((state) => state.vote)(VoteMain);
