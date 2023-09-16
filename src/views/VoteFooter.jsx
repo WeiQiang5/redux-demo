@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { useContext } from "react";
 import ThemeContext from "../ThemeContext";
+import * as TYPES from "../store/action-types";
 
 const VoteFooter = () => {
   const { store } = useContext(ThemeContext);
@@ -10,7 +11,7 @@ const VoteFooter = () => {
         type="primary"
         onClick={() => {
           store.dispatch({
-            type: "VOTE_SUP",
+            type: TYPES.VOTE_SUP,
           });
         }}
       >
@@ -20,7 +21,7 @@ const VoteFooter = () => {
         danger
         onClick={() => {
           store.dispatch({
-            type: "VOTE_OPP",
+            type: TYPES.VOTE_OPP,
           });
         }}
       >

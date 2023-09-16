@@ -1,3 +1,4 @@
+import * as TYPES from "../action-types";
 const initial = {
   supNum: 11,
   oppNum: 5,
@@ -6,7 +7,7 @@ const initial = {
 export default function personalReducer(state = initial, action) {
   state = { ...state };
   switch (action.type) {
-    case "PERSONAL_SUP":
+    case TYPES.PERSONAL_SUP:
       state.supNum++;
       break;
     default:
