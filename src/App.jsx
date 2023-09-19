@@ -1,13 +1,10 @@
 import React from "react";
 
 import styled from "styled-components";
-import { HashRouter, Route, Switch, Redirect, Link } from "react-router-dom";
+import { HashRouter, Link } from "react-router-dom";
 // 引入组件
-import A from "./views/A";
-import B from "./views/B";
-import C from "./views/C";
-import NotFound from "./views/NotFound";
-import Login from "./views/Login";
+import RouterView from "./router";
+import routes from "./router/routes";
 
 const NavBox = styled.nav`
   a {
@@ -28,14 +25,7 @@ const App = () => {
 
       {/* 路由容器 */}
       <div className="content">
-        <Switch>
-          <Redirect exact from="/" to="/a" />
-          <Route path="/a" component={A} />
-          <Route path="/b" component={B} />
-          <Route path="/c" component={C} />
-          <Route path="/NotFound" component={NotFound} />
-          <Redirect to="/NotFound" />
-        </Switch>
+        <RouterView routes={routes} />
       </div>
     </HashRouter>
   );

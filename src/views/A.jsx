@@ -3,6 +3,8 @@ import A1 from "./a/A1";
 import styled from "styled-components";
 import A2 from "./a/A2";
 import A3 from "./a/A3";
+import RouterView from "../router";
+import aRoutes from "../router/aRoutes";
 
 const DemoBox = styled.div`
   display: flex;
@@ -26,11 +28,7 @@ const A = () => {
       </div>
       <div className="view">
         {/* 配置二级路由的匹配规则：需要把一级路由地址带上，不能省略 */}
-        <Switch>
-          <Route path="/a/a1" component={A1} />
-          <Route path="/a/a2" component={A2} />
-          <Route path="/a/a3" component={A3} />
-        </Switch>
+        <RouterView routes={aRoutes} />
       </div>
     </DemoBox>
   );
