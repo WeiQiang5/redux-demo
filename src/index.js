@@ -3,11 +3,7 @@ import ReactDOM from "react-dom/client";
 // 使用antd
 import { ConfigProvider } from "antd";
 import zhCn from "antd/locale/zh_CN";
-import Vote from "./views/Vote";
-import { Provider } from "react-redux";
-
-// 引入store
-import store from "./store";
+import App from "./App";
 
 /**
  * 为了在各个组件中，都可以把创建的store获取到，我们可以基于上下文的方案：
@@ -17,8 +13,6 @@ import store from "./store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ConfigProvider locale={zhCn}>
-    <Provider store={store}>
-      <Vote />
-    </Provider>
+    <App />
   </ConfigProvider>
 );

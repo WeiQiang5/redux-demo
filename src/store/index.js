@@ -1,6 +1,8 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 // 合并的reducer
 import reducer from "./reducers";
+import reduxLogger from "redux-logger";
+import reduxThunk from "react-thunk";
 // 公共状态
 // let initial = {
 //   supNum: 10,
@@ -36,6 +38,6 @@ import reducer from "./reducers";
 //   return state;
 // };
 // 公共容器
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(reduxLogger, reduxThunk));
 console.log(store);
 export default store;
