@@ -1,28 +1,15 @@
 import React from "react";
 
-import styled from "styled-components";
-import { HashRouter, Link } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 // 引入组件
 import RouterView from "./router";
 import routes from "./router/routes";
-
-const NavBox = styled.nav`
-  a {
-    margin-right: 10px;
-    color: #000;
-  }
-`;
+import HomeHead from "./components/HomeHead";
 
 const App = () => {
   return (
     <HashRouter>
-      {/* 导航部分 */}
-      <NavBox>
-        <Link to="/a">A</Link>
-        <Link to="/b">B</Link>
-        <Link to="/c">C</Link>
-      </NavBox>
-
+      <HomeHead />
       {/* 路由容器 */}
       <div className="content">
         <RouterView routes={routes} />
